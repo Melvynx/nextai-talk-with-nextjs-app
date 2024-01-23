@@ -131,8 +131,6 @@ ${r.content}`;
       })
       .join("\n\n");
 
-    console.log(context);
-
     const otherMessages = messages.slice(0, messages.length - 1).map((m) => {
       const mess: ChatCompletionMessageParam = {
         role: m.role as "assistant" | "user",
@@ -141,6 +139,7 @@ ${r.content}`;
 
       return mess;
     });
+
     const finalMessages: Array<ChatCompletionMessageParam> = [
       {
         role: "system",
